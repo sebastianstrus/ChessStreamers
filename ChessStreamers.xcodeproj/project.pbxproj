@@ -23,6 +23,8 @@
 		7D94D818276356B700603A14 /* StreamersAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D817276356B700603A14 /* StreamersAPIService.swift */; };
 		7D94D81B2763570100603A14 /* GeneralError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D81A2763570100603A14 /* GeneralError.swift */; };
 		7D94D81E27635D5400603A14 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D81D27635D5400603A14 /* UIViewController+Extensions.swift */; };
+		7D94D8212763623300603A14 /* StreamerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D8202763623300603A14 /* StreamerCell.swift */; };
+		7D94D8232763627100603A14 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D8222763627100603A14 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		7D94D817276356B700603A14 /* StreamersAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamersAPIService.swift; sourceTree = "<group>"; };
 		7D94D81A2763570100603A14 /* GeneralError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralError.swift; sourceTree = "<group>"; };
 		7D94D81D27635D5400603A14 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		7D94D8202763623300603A14 /* StreamerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamerCell.swift; sourceTree = "<group>"; };
+		7D94D8222763627100603A14 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 		7D94D8112763555900603A14 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7D94D81F276361FD00603A14 /* Cells */,
 				7D94D8062763517B00603A14 /* MainView.swift */,
 			);
 			path = View;
@@ -208,8 +213,17 @@
 			isa = PBXGroup;
 			children = (
 				7D94D81D27635D5400603A14 /* UIViewController+Extensions.swift */,
+				7D94D8222763627100603A14 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7D94D81F276361FD00603A14 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7D94D8202763623300603A14 /* StreamerCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,10 +356,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D94D8212763623300603A14 /* StreamerCell.swift in Sources */,
 				7D94D80D2763536A00603A14 /* Properties.swift in Sources */,
 				7D94D7D8276350DD00603A14 /* MainViewController.swift in Sources */,
 				7D94D7D4276350DD00603A14 /* AppDelegate.swift in Sources */,
 				7D94D7D6276350DD00603A14 /* SceneDelegate.swift in Sources */,
+				7D94D8232763627100603A14 /* UIView+Extensions.swift in Sources */,
 				7D94D8152763562C00603A14 /* Streamer.swift in Sources */,
 				7D94D81B2763570100603A14 /* GeneralError.swift in Sources */,
 				7D94D81E27635D5400603A14 /* UIViewController+Extensions.swift in Sources */,

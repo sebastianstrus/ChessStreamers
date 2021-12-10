@@ -8,15 +8,20 @@
 import UIKit
 import Combine
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+
+    
 
     fileprivate var mainView: MainView!
+    fileprivate let cellId = "cellId"
     
     var streamers: [Streamer] = [] {
         didSet {
             print(streamers)
             
             print("Count: \(streamers.count)")
+            mainView.reload()
         }
     }
     
@@ -34,6 +39,9 @@ class MainViewController: UIViewController {
     private func setupView() {
         self.mainView = MainView(frame: view.frame)
         view.addSubview(mainView)
+        mainView.setDelegate(delegate: self)
+        mainView.setDataSource(delegate: self)
+        mainView.registerCell(className: StreamerCell.self, id: cellId)
     }
     
     private func getStreamers() {
@@ -55,6 +63,19 @@ class MainViewController: UIViewController {
                 // TODO: update core data
             })
         
+    }
+    
+    // MARK: - UICollectionViewDataSource functions
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return streamers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! StreamerCell
+        cell.streamer = streamers[indexPath.row]
+        cell.backgroundColor = UIColor.gray
+
+        return cell
     }
 
 

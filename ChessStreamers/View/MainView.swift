@@ -19,9 +19,39 @@ class MainView: UIView {
             fatalError("init(coder:) has not been implemented")
         }
 
+    
+    // MARK: - All subviews
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 16
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .clear
+        return cv
+    }()
+    
 
     // MARK: - private functions
     private func setup() {
         backgroundColor = UIColor.green
+        addSubview(collectionView)
+        collectionView.pinToEdges(view: self, safe: true)
+    }
+    
+    // MARK: - Public functions
+    func reload() {
+        collectionView.reloadData()
+    }
+    
+    func setDelegate(delegate: UICollectionViewDelegate) {
+        collectionView.delegate = delegate
+    }
+    
+    func setDataSource(delegate: UICollectionViewDataSource) {
+        collectionView.dataSource = delegate
+    }
+    
+    func registerCell(className: AnyClass, id: String) {
+        collectionView.register(className, forCellWithReuseIdentifier: id)
     }
 }
