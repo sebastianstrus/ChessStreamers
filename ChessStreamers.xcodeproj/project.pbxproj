@@ -17,6 +17,12 @@
 		7D94D7F8276350E000603A14 /* ChessStreamersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7F7276350E000603A14 /* ChessStreamersUITests.swift */; };
 		7D94D7FA276350E000603A14 /* ChessStreamersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7F9276350E000603A14 /* ChessStreamersUITestsLaunchTests.swift */; };
 		7D94D8072763517B00603A14 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D8062763517B00603A14 /* MainView.swift */; };
+		7D94D80D2763536A00603A14 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D80C2763536A00603A14 /* Properties.swift */; };
+		7D94D80F2763553600603A14 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D80E2763553600603A14 /* Device.swift */; };
+		7D94D8152763562C00603A14 /* Streamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D8142763562C00603A14 /* Streamer.swift */; };
+		7D94D818276356B700603A14 /* StreamersAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D817276356B700603A14 /* StreamersAPIService.swift */; };
+		7D94D81B2763570100603A14 /* GeneralError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D81A2763570100603A14 /* GeneralError.swift */; };
+		7D94D81E27635D5400603A14 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D81D27635D5400603A14 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		7D94D7F7276350E000603A14 /* ChessStreamersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessStreamersUITests.swift; sourceTree = "<group>"; };
 		7D94D7F9276350E000603A14 /* ChessStreamersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessStreamersUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7D94D8062763517B00603A14 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7D94D80C2763536A00603A14 /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		7D94D80E2763553600603A14 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		7D94D8142763562C00603A14 /* Streamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streamer.swift; sourceTree = "<group>"; };
+		7D94D817276356B700603A14 /* StreamersAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamersAPIService.swift; sourceTree = "<group>"; };
+		7D94D81A2763570100603A14 /* GeneralError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralError.swift; sourceTree = "<group>"; };
+		7D94D81D27635D5400603A14 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +113,18 @@
 		7D94D7D2276350DD00603A14 /* ChessStreamers */ = {
 			isa = PBXGroup;
 			children = (
+				7D94D819276356E100603A14 /* Errors */,
+				7D94D8102763555000603A14 /* Data */,
+				7D94D8112763555900603A14 /* View */,
+				7D94D813276355F900603A14 /* Controller */,
 				7D94D7D3276350DD00603A14 /* AppDelegate.swift */,
 				7D94D7D5276350DD00603A14 /* SceneDelegate.swift */,
-				7D94D7D7276350DD00603A14 /* MainViewController.swift */,
+				7D94D81C27635C9400603A14 /* Extensions */,
 				7D94D7DF276350DF00603A14 /* Assets.xcassets */,
 				7D94D7E1276350DF00603A14 /* LaunchScreen.storyboard */,
 				7D94D7E4276350DF00603A14 /* Info.plist */,
 				7D94D7DC276350DD00603A14 /* ChessStreamers.xcdatamodeld */,
-				7D94D8062763517B00603A14 /* MainView.swift */,
+				7D94D80B2763535700603A14 /* Utilities */,
 			);
 			path = ChessStreamers;
 			sourceTree = "<group>";
@@ -128,6 +144,72 @@
 				7D94D7F9276350E000603A14 /* ChessStreamersUITestsLaunchTests.swift */,
 			);
 			path = ChessStreamersUITests;
+			sourceTree = "<group>";
+		};
+		7D94D80B2763535700603A14 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7D94D80C2763536A00603A14 /* Properties.swift */,
+				7D94D80E2763553600603A14 /* Device.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7D94D8102763555000603A14 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7D94D8162763568700603A14 /* Services */,
+				7D94D812276355F000603A14 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7D94D8112763555900603A14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D94D8062763517B00603A14 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7D94D812276355F000603A14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D94D8142763562C00603A14 /* Streamer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7D94D813276355F900603A14 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7D94D7D7276350DD00603A14 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7D94D8162763568700603A14 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7D94D817276356B700603A14 /* StreamersAPIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7D94D819276356E100603A14 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				7D94D81A2763570100603A14 /* GeneralError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		7D94D81C27635C9400603A14 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7D94D81D27635D5400603A14 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,11 +342,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D94D80D2763536A00603A14 /* Properties.swift in Sources */,
 				7D94D7D8276350DD00603A14 /* MainViewController.swift in Sources */,
 				7D94D7D4276350DD00603A14 /* AppDelegate.swift in Sources */,
 				7D94D7D6276350DD00603A14 /* SceneDelegate.swift in Sources */,
+				7D94D8152763562C00603A14 /* Streamer.swift in Sources */,
+				7D94D81B2763570100603A14 /* GeneralError.swift in Sources */,
+				7D94D81E27635D5400603A14 /* UIViewController+Extensions.swift in Sources */,
 				7D94D8072763517B00603A14 /* MainView.swift in Sources */,
+				7D94D80F2763553600603A14 /* Device.swift in Sources */,
 				7D94D7DE276350DD00603A14 /* ChessStreamers.xcdatamodeld in Sources */,
+				7D94D818276356B700603A14 /* StreamersAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
