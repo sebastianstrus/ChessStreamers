@@ -8,41 +8,42 @@
 import UIKit
 import Combine
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
 
-    
+class MainViewController: UICollectionViewController {
 
-    fileprivate var mainView: MainView!
     fileprivate let cellId = "cellId"
+    private var streamersCancellable: AnyCancellable? = nil
     
     var streamers: [Streamer] = [] {
         didSet {
             print(streamers)
             
             print("Count: \(streamers.count)")
-            mainView.reload()
+            collectionView.reloadData()
         }
     }
     
-    private var streamersCancellable: AnyCancellable? = nil
-    
-    // MARK: - View functions
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        getStreamers()
+
+        collectionView?.contentInsetAdjustmentBehavior = .always
+        collectionView?.register(StreamerCell.self, forCellWithReuseIdentifier: cellId)
         
-        setupView()
+        getStreamers()
     }
     
-    // MARK: - private functions
-    private func setupView() {
-        self.mainView = MainView(frame: view.frame)
-        view.addSubview(mainView)
-        mainView.setDelegate(delegate: self)
-        mainView.setDataSource(delegate: self)
-        mainView.registerCell(className: StreamerCell.self, id: cellId)
-    }
+    // MARK: - Initializers
+       init() {
+           print("initializer")
+           super.init(collectionViewLayout: FlowLayout(cellsPerRow: Device.IS_IPAD ? 8 : 4,
+                                                       minimumInteritemSpacing: 4,
+                                                       minimumLineSpacing: 4,
+                                                       sectionInset: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)))
+       }
+       required init?(coder: NSCoder) {
+           fatalError("init(coder:) has not been implemented")
+       }
     
     private func getStreamers() {
         self.streamersCancellable = StreamersAPIService.getStreamers()
@@ -66,18 +67,58 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     // MARK: - UICollectionViewDataSource functions
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return streamers.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! StreamerCell
-        cell.streamer = streamers[indexPath.row]
+        cell.configureCell(streamer: streamers[indexPath.row])
         cell.backgroundColor = UIColor.gray
 
         return cell
     }
-
-
 }
 
+
+class FlowLayout: UICollectionViewFlowLayout {
+
+    let cellsPerRow: Int
+
+    required init(cellsPerRow: Int = 1, minimumInteritemSpacing: CGFloat = 0, minimumLineSpacing: CGFloat = 0, sectionInset: UIEdgeInsets = .zero) {
+        self.cellsPerRow = cellsPerRow
+
+        super.init()
+
+        self.minimumInteritemSpacing = minimumInteritemSpacing
+        self.minimumLineSpacing = minimumLineSpacing
+        self.sectionInset = sectionInset
+        estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        guard let layoutAttributes = super.layoutAttributesForItem(at: indexPath) else { return nil }
+        guard let collectionView = collectionView else { return layoutAttributes }
+
+        let marginsAndInsets = collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + sectionInset.left + sectionInset.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+        layoutAttributes.bounds.size.width = ((collectionView.bounds.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
+
+        return layoutAttributes
+    }
+
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let superLayoutAttributes = super.layoutAttributesForElements(in: rect)!.map { $0.copy() as! UICollectionViewLayoutAttributes }
+        guard scrollDirection == .vertical else { return superLayoutAttributes }
+
+        let layoutAttributes = superLayoutAttributes.compactMap { layoutAttribute in
+            return layoutAttribute.representedElementCategory == .cell ? layoutAttributesForItem(at: layoutAttribute.indexPath) : layoutAttribute
+        }
+
+        return layoutAttributes
+    }
+
+}

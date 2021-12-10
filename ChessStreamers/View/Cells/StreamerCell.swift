@@ -11,43 +11,73 @@ import UIKit
 
 class StreamerCell: UICollectionViewCell {
     
-
+    
     var streamer : Streamer? {
         didSet {
-            setStreamer(streamer: streamer!)
+            configureCell(streamer: streamer!)
         }
     }
 
-    let imageView: UIImageView = {
+    
+    // MARK: - All subviews
+    fileprivate var imageView: UIImageView = {
         let iv = UIImageView()
+        iv.backgroundColor = .red
+        iv.contentMode = ContentMode.scaleAspectFill
+        iv.clipsToBounds = true
+        
         return iv
     }()
     
-
+    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayout()
+        
+        
+        contentView.addSubview(imageView)
+        
+        imageView.setAnchor(top: contentView.layoutMarginsGuide.topAnchor,
+                            leading: contentView.layoutMarginsGuide.leadingAnchor,
+                            bottom: contentView.layoutMarginsGuide.bottomAnchor,
+                            trailing: contentView.layoutMarginsGuide.trailingAnchor,
+                            paddingTop: 0,
+                            paddingLeft: 0,
+                            paddingBottom: 0,
+                            paddingRight: 0,
+                            width: 0,
+                            height: self.frame.width*1.5)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - private functions
-    func setupLayout() {
-        addSubview(imageView)
-        imageView.pinToEdges(view: self, safe: false)
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        layoutIfNeeded()
+        layoutAttributes.bounds.size.height = contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        return layoutAttributes
     }
     
     // MARK: - public functions
-    func setStreamer(streamer: Streamer) {
+    func configureCell(streamer: Streamer) {
         
-        //imageView.image = streamer.image
+        imageView.load(url: URL(string: streamer.avatarUrl)!)
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.setupLayout()
+    // MARK: - private functions
+    private func setImage(from url: String) {
+        guard let imageURL = URL(string: url) else { return }
+        
+        // just not to cause a deadlock in UI!
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                self.imageView.image = image
+            }
+        }
     }
+    
 }

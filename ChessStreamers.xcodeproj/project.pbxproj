@@ -25,6 +25,7 @@
 		7D94D81E27635D5400603A14 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D81D27635D5400603A14 /* UIViewController+Extensions.swift */; };
 		7D94D8212763623300603A14 /* StreamerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D8202763623300603A14 /* StreamerCell.swift */; };
 		7D94D8232763627100603A14 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D8222763627100603A14 /* UIView+Extensions.swift */; };
+		7D94D8252763760A00603A14 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D8242763760A00603A14 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		7D94D81D27635D5400603A14 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7D94D8202763623300603A14 /* StreamerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamerCell.swift; sourceTree = "<group>"; };
 		7D94D8222763627100603A14 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		7D94D8242763760A00603A14 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			children = (
 				7D94D81D27635D5400603A14 /* UIViewController+Extensions.swift */,
 				7D94D8222763627100603A14 /* UIView+Extensions.swift */,
+				7D94D8242763760A00603A14 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				7D94D8232763627100603A14 /* UIView+Extensions.swift in Sources */,
 				7D94D8152763562C00603A14 /* Streamer.swift in Sources */,
 				7D94D81B2763570100603A14 /* GeneralError.swift in Sources */,
+				7D94D8252763760A00603A14 /* UIImageView+Extensions.swift in Sources */,
 				7D94D81E27635D5400603A14 /* UIViewController+Extensions.swift in Sources */,
 				7D94D8072763517B00603A14 /* MainView.swift in Sources */,
 				7D94D80F2763553600603A14 /* Device.swift in Sources */,
