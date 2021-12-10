@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		7D94D7D4276350DD00603A14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7D3276350DD00603A14 /* AppDelegate.swift */; };
 		7D94D7D6276350DD00603A14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7D5276350DD00603A14 /* SceneDelegate.swift */; };
-		7D94D7D8276350DD00603A14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7D7276350DD00603A14 /* ViewController.swift */; };
-		7D94D7DB276350DD00603A14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D94D7D9276350DD00603A14 /* Main.storyboard */; };
+		7D94D7D8276350DD00603A14 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7D7276350DD00603A14 /* MainViewController.swift */; };
 		7D94D7DE276350DD00603A14 /* ChessStreamers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7DC276350DD00603A14 /* ChessStreamers.xcdatamodeld */; };
 		7D94D7E0276350DF00603A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D94D7DF276350DF00603A14 /* Assets.xcassets */; };
 		7D94D7E3276350DF00603A14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D94D7E1276350DF00603A14 /* LaunchScreen.storyboard */; };
 		7D94D7EE276350E000603A14 /* ChessStreamersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7ED276350E000603A14 /* ChessStreamersTests.swift */; };
 		7D94D7F8276350E000603A14 /* ChessStreamersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7F7276350E000603A14 /* ChessStreamersUITests.swift */; };
 		7D94D7FA276350E000603A14 /* ChessStreamersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D7F9276350E000603A14 /* ChessStreamersUITestsLaunchTests.swift */; };
+		7D94D8072763517B00603A14 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94D8062763517B00603A14 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,7 @@
 		7D94D7D0276350DD00603A14 /* ChessStreamers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessStreamers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D94D7D3276350DD00603A14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D94D7D5276350DD00603A14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7D94D7D7276350DD00603A14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7D94D7DA276350DD00603A14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D94D7D7276350DD00603A14 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7D94D7DD276350DD00603A14 /* ChessStreamers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChessStreamers.xcdatamodel; sourceTree = "<group>"; };
 		7D94D7DF276350DF00603A14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D94D7E2276350DF00603A14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		7D94D7F3276350E000603A14 /* ChessStreamersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessStreamersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D94D7F7276350E000603A14 /* ChessStreamersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessStreamersUITests.swift; sourceTree = "<group>"; };
 		7D94D7F9276350E000603A14 /* ChessStreamersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessStreamersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7D94D8062763517B00603A14 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +103,12 @@
 			children = (
 				7D94D7D3276350DD00603A14 /* AppDelegate.swift */,
 				7D94D7D5276350DD00603A14 /* SceneDelegate.swift */,
-				7D94D7D7276350DD00603A14 /* ViewController.swift */,
-				7D94D7D9276350DD00603A14 /* Main.storyboard */,
+				7D94D7D7276350DD00603A14 /* MainViewController.swift */,
 				7D94D7DF276350DF00603A14 /* Assets.xcassets */,
 				7D94D7E1276350DF00603A14 /* LaunchScreen.storyboard */,
 				7D94D7E4276350DF00603A14 /* Info.plist */,
 				7D94D7DC276350DD00603A14 /* ChessStreamers.xcdatamodeld */,
+				7D94D8062763517B00603A14 /* MainView.swift */,
 			);
 			path = ChessStreamers;
 			sourceTree = "<group>";
@@ -236,7 +236,6 @@
 			files = (
 				7D94D7E3276350DF00603A14 /* LaunchScreen.storyboard in Resources */,
 				7D94D7E0276350DF00603A14 /* Assets.xcassets in Resources */,
-				7D94D7DB276350DD00603A14 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D94D7D8276350DD00603A14 /* ViewController.swift in Sources */,
+				7D94D7D8276350DD00603A14 /* MainViewController.swift in Sources */,
 				7D94D7D4276350DD00603A14 /* AppDelegate.swift in Sources */,
 				7D94D7D6276350DD00603A14 /* SceneDelegate.swift in Sources */,
+				7D94D8072763517B00603A14 /* MainView.swift in Sources */,
 				7D94D7DE276350DD00603A14 /* ChessStreamers.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,14 +301,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7D94D7D9276350DD00603A14 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7D94D7DA276350DD00603A14 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7D94D7E1276350DF00603A14 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -448,7 +440,6 @@
 				INFOPLIST_FILE = ChessStreamers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -476,7 +467,6 @@
 				INFOPLIST_FILE = ChessStreamers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
