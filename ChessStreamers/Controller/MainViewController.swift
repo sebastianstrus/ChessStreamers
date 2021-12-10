@@ -78,6 +78,17 @@ class MainViewController: UICollectionViewController {
 
         return cell
     }
+    
+    // MARK: - UICollectionViewDelegate functions
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+            let detailsViewController = DetailsViewController()
+            detailsViewController.streamer = streamers[indexPath.row]
+            navigationController?.pushViewController(detailsViewController, animated: true)
+            //present(detailsViewController, animated: true, completion: nil)
+        }
+    
+
 }
 
 
